@@ -1,0 +1,39 @@
+! modification part
+!wtrj.F
+!ying  08/05/2011
+        write(5,*) '> Insert the initial steps: '
+        read (6,*) intsteps
+        write(5,*) '> Insert the time step dt:'
+        read (6,*) dt
+!ying  08/05/2011
+
+!antonio-ying 20/07/2011
+10    write(5,*) '> insert [1] for input program'
+      write(5,*) '> insert [2] for output program'
+      write(5,*) '> insert [3] for help'
+
+      elseif(mode.eq.3)then
+        write(5,*)
+        write(5,*)'+ Help -------------------------------------------+'
+        write(5,*)'| For the input you need of fort.10 (coord.)      |' 
+        write(5,*)'| For the output you need of fort.20i and fort.15 |'
+        write(5,*)'+-------------------------------------------------+'
+        write(5,*)
+        go to 10
+      elseif(mode.gt.3)then
+        write(5,*)'Your choose is not valid, retry'
+        go to 10
+      endif
+!antonio-ying 07/20/2011
+
+!antonio 08/05/2011
+            write(15,*)molApara(i)*npartA
+     $                  +molBpara(i)*npartB+molCpara(i)*npartC, 
+     $                   molApara(i), molBpara(i), molCpara(i)
+!antonio 08/05/2011
+
+!antonio 28/11/2011
+ added the part of 08/05/2011 into wrconf_vel.f
+!antonio 28/11/2011
+
+
