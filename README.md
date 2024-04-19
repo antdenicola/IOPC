@@ -1,4 +1,2 @@
 # IOPC
-IOPC Interface for OCCAM with extended connectivity type.
-
-visit the wiki of IOPC for code documentation.
+IOPC Interface for OCCAM with extended connectivity type. The main code IOPC facilitate the build of parallel input/output (trajectory) for parallel CPU-based version of OCCAM MD. The additonal tool (properties.F) can be used to sum-up in a single file all partial VSCF1 and VSCF2 values produced by each CPU execution of a parallel job. The directories mono and multi contain example file for generating a parallel input starting from a standard input coodrinate file of OCCAM MD. Visit the wiki of IOPC for code documentation.
