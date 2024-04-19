@@ -1,0 +1,5 @@
+100 Molecules
+20000 Particles
+50 particles/molecule A
+50 particles/molecule B
+

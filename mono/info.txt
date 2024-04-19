@@ -1,0 +1,4 @@
+100 Molecules
+20000 Particles
+200 particles/molecule 
+
