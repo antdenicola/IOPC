@@ -43,10 +43,9 @@
 
       allocate(nat(nmol))
       allocate(itype(natom))
-      allocate(itype_con(natom))
       allocate(nbonds(natom)) 
-      allocate(ibond(natom,6))
-      allocate(ibond1(natom,6))
+      allocate(ibond(natom,4))
+      allocate(ibond1(natom,4))
       allocate(molApara(numprocs)) 
       allocate(molBpara(numprocs))
       allocate(molCpara(numprocs))

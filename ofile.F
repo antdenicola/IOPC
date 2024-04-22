@@ -19,6 +19,8 @@
          istop = 1
       endif 
 
+      open(unit = 16, file= 'fort.16', status = 'UNKNOWN')
+
       open (unit = 20, file = 'fort.20', status = 'UNKNOWN',
      $      iostat = ios, access='SEQUENTIAL', form = 'FORMATTED')
       if (ios.ne.0) then

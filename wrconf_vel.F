@@ -11,7 +11,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
       use varsh 
       implicit none
 
-      integer Atom,Atomtotal,Lkind,L_con,Numb
+      integer Atom,Atomtotal,Lkind,Numb
       character Lab
 
 
@@ -118,7 +118,6 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
                 Lab=clab(Atomtotal)                    ! the label of atom
                 Lkind=itype(Atomtotal)                 ! the index of type of atom
-                L_con=itype_con(Atomtotal)             ! STEFANO 08.03.2019
                 Numb= nbonds(Atomtotal)                ! the number of bond 
           
            
@@ -132,7 +131,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
           enddo
 
-       write(20+i,200) Atom,Atomtotal,Lab,Lkind,L_con,Numb,
+       write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $                 X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
      $                vx(Atomtotal),vy(Atomtotal),vz(Atomtotal),    ! velocity writing
      $  (ibond1(Atomtotal,j),j=1,4)
@@ -172,7 +171,6 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
                 Lab= clab(Atomtotal)                   ! the label of atom
                 Lkind=itype(Atomtotal)                 ! which kind of atom
-                L_con=itype_con(Atomtotal)             ! STEFANO 08.03.2019
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
@@ -188,7 +186,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
           enddo
 
 
-       write(20+i,200) Atom,Atomtotal,Lab,Lkind,L_con,Numb,
+       write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
      $                vx(Atomtotal),vy(Atomtotal),vz(Atomtotal),
      $  (ibond1(Atomtotal,j),j=1,4)
@@ -230,7 +228,6 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
                 Lab= clab(Atomtotal)                   ! the label of atom
                 Lkind=itype(Atomtotal)                 ! which kind of atom
-                L_con=itype_con(Atomtotal)             ! STEFANO 08.03.2019
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
@@ -246,7 +243,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
           enddo
 
 
-       write(20+i,200) Atom,Atomtotal,Lab,Lkind,L_con,Numb,
+       write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
      $                vx(Atomtotal),vy(Atomtotal),vz(Atomtotal),
      $  (ibond1(Atomtotal,j),j=1,4)
@@ -289,7 +286,6 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
                 Lab= clab(Atomtotal)                   ! the label of atom
                 Lkind=itype(Atomtotal)                 ! which kind of atom
-                L_con=itype_con(Atomtotal)             ! STEFANO 08.03.2019
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
@@ -306,14 +302,14 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
           enddo
 
 
-       write(20+i,200) Atom,Atomtotal,Lab,Lkind,L_con,Numb,
+       write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
      $             vx(Atomtotal),vy(Atomtotal),vz(Atomtotal),
      $  (ibond1(Atomtotal,j),j=1,4)
 
        enddo
        enddo
- 200  format(i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 2x, i5, 6d15.6, 2x, 4i7)
+ 200  format(i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 6d15.6, 2x, 4i7)
       enddo
 
       return

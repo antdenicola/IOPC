@@ -23,7 +23,6 @@ CCCCCCCCCCCC the variables for the input program   CCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
        integer, allocatable :: nat(:)               ! the number of atoms in every molecule 
        integer, allocatable :: itype(:)             ! the index of types of particles
-       integer, allocatable :: itype_con(:)         ! STEFANO
        integer, allocatable :: nbonds(:)            ! the number of bonds of one particle
        integer, allocatable :: ibond(:,:)           ! the connectivity of bonds 
        integer, allocatable :: ibond1(:,:)          ! the connectivity of bonds for wtring 

@@ -11,7 +11,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
       use varsh 
       implicit none
 
-      integer Atom,Atomtotal,Lkind, L_con, Numb     ! STEFANO 08.03.2019
+      integer Atom,Atomtotal,Lkind,Numb
       character Lab
 
 
@@ -77,6 +77,11 @@ c      print*,mod(molB,numprocs)
      $      +molBpara(i)*npartB+molCpara(i)*npartC+molDpara(i)*npartD,
      $             molApara(i), molBpara(i), molCpara(i), molDpara(i)
 
+            write(16,*) molApara(i), npartA, 'LabA'
+            write(16,*) molBpara(i), npartB, 'LabB'
+            write(16,*) molDpara(i), npartC, 'LabC'
+            write(16,*) molDpara(i), npartD, 'LabD'
+
             write(20+i,*)'box'
             write(20+i,*) b(1,1),b(2,2),b(3,3),'0.000'
             write(20+i,*)'molecules_total_number'
@@ -117,11 +122,10 @@ c      print*,mod(molB,numprocs)
 
                 Lab=clab(Atomtotal)                    ! the label of atom
                 Lkind=itype(Atomtotal)                 ! the index of type of atom
-                L_con=itype_con(Atomtotal)             ! STEFANO 08.09.2019
                 Numb= nbonds(Atomtotal)                ! the number of bond 
           
            
-           do j = 1, 6 
+           do j = 1, 4 
 
             if (ibond(Atomtotal,j).ne.0) then
                ibond1(Atomtotal,j)=ibond(Atomtotal,j)-keep
@@ -131,9 +135,9 @@ c      print*,mod(molB,numprocs)
 
           enddo
 
-       write(20+i,200) Atom,Atomtotal,Lab,Lkind,L_con,Numb,
+       write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $                 X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
-     $  (ibond1(Atomtotal,j),j=1,6)      ! default (ibond1(Atomtotal,j),j=1,4)
+     $  (ibond1(Atomtotal,j),j=1,4)      ! default (ibond1(Atomtotal,j),j=1,4)
 
           enddo
           enddo
@@ -170,11 +174,10 @@ c      print*,mod(molB,numprocs)
 
                 Lab= clab(Atomtotal)                   ! the label of atom
                 Lkind=itype(Atomtotal)                 ! which kind of atom
-                L_con=itype_con(Atomtotal)             ! STEFANO 08.09.2019
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
-           do j = 1, 6
+           do j = 1, 4
 
             if (ibond(Atomtotal,j).gt.0) then
              ibond1(Atomtotal,j)=ibond(Atomtotal,j)-keep
@@ -186,9 +189,9 @@ c      print*,mod(molB,numprocs)
           enddo
 
 
-       write(20+i,200) Atom,Atomtotal,Lab,Lkind,L_con,Numb,
+       write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
-     $  (ibond1(Atomtotal,j),j=1,6)   !default  (ibond1(Atomtotal,j),j=1,4)
+     $  (ibond1(Atomtotal,j),j=1,4)   !default  (ibond1(Atomtotal,j),j=1,4)
 
        enddo
        enddo
@@ -227,11 +230,10 @@ c      print*,mod(molB,numprocs)
 
                 Lab= clab(Atomtotal)                   ! the label of atom
                 Lkind=itype(Atomtotal)                 ! which kind of atom
-                L_con=itype_con(Atomtotal)             ! STEFANO 08.09.2019
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
-           do j = 1, 6
+           do j = 1, 4
 
             if (ibond(Atomtotal,j).gt.0) then
              ibond1(Atomtotal,j)=ibond(Atomtotal,j)-keep
@@ -243,9 +245,9 @@ c      print*,mod(molB,numprocs)
           enddo
 
 
-       write(20+i,200) Atom,Atomtotal,Lab,Lkind,L_con,Numb,
+       write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
-     $  (ibond1(Atomtotal,j),j=1,6)
+     $  (ibond1(Atomtotal,j),j=1,4)
 
        enddo
        enddo
@@ -285,11 +287,10 @@ c      print*,mod(molB,numprocs)
 
                 Lab= clab(Atomtotal)                   ! the label of atom
                 Lkind=itype(Atomtotal)                 ! which kind of atom
-                L_con=itype_con(Atomtotal)             ! STEFANO 08.09.2019
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
-           do j = 1, 6
+           do j = 1, 4
 
             if (ibond(Atomtotal,j).gt.0) then
              ibond1(Atomtotal,j)=ibond(Atomtotal,j)-keep
@@ -302,13 +303,15 @@ c      print*,mod(molB,numprocs)
           enddo
 
 
-       write(20+i,200) Atom,Atomtotal,Lab,Lkind,L_con,Numb,
+       write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
-     $  (ibond1(Atomtotal,j),j=1,6)
+     $  (ibond1(Atomtotal,j),j=1,4)
+
+
 
        enddo
        enddo
-200   format(i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 2x, i5, 3d15.6, 2x, 6i8)  ! default (i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 3d15.6, 2x, 4i7)
+200   format(i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 3d15.6, 2x, 4i7)  ! default (i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 3d15.6, 2x, 4i7)
       enddo
 
       return

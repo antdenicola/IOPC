@@ -48,14 +48,14 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
       do 110 nl = 1,nat(n)
             l = l + 1
             read (10,*) ll,clab(l), itype(l),
-     $  itype_con(l), nbonds(l)
+     $  nbonds(l)
      $, x(l),y(l),z(l) ,
      $  vx(l), vy(l), vz(l),
      $  (ibond(l,j),j=1,4)
 
 c           write (20,500) ll,clab(l), itype(l),
            write (20,*) ll,clab(l), itype(l),
-     $  itype_con(l), nbonds(l)
+     $  nbonds(l)
      $, x(l),y(l),z(l) ,
      $  vx(l),vy(l),vz(l),
      $  (ibond(l,j),j=1,4)

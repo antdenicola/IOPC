@@ -48,21 +48,21 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
       do 110 nl = 1,nat(n)
             l = l + 1
             read (10,*) ll,clab(l), itype(l),
-     $  itype_con(l), nbonds(l)                   ! STEFANO 08.03.2019
+     $  nbonds(l)
      $, x(l),y(l),z(l) ,
 !     $  vx(l), vy(l), vz(l),
-     $  (ibond(l,j),j=1,6)     ! insert the max number of connectivity [default: (ibond(l,j),j=1,4) ]
+     $  (ibond(l,j),j=1,4)     ! insert the max number of connectivity [default: (ibond(l,j),j=1,4) ]
 
 c           write (20,500) ll,clab(l), itype(l),
            write (20,*) ll,clab(l), itype(l),
-     $  itype_con(l), nbonds(l)
+     $  nbonds(l)
      $, x(l),y(l),z(l) ,
 !     $  vx(l),vy(l),vz(l),
-     $  (ibond(l,j),j=1,6)    ! insert the max number of connectivity [default: (ibond(l,j),j=1,4) ]
+     $  (ibond(l,j),j=1,4)    ! insert the max number of connectivity [default: (ibond(l,j),j=1,4) ]
 
  110  continue
  120  continue
- 500  format(i8,2x, a5, 2i3, 6d15.6, 6i8)   ! the default value of this format is: (i8,2x, a5, 2i3, 6d15.6, 4i8)
+ 500  format(i8,2x, a5, 2i3, 6d15.6, 4i8)   ! the default value of this format is: (i8,2x, a5, 2i3, 6d15.6, 4i8)
 
 
       close(10)
