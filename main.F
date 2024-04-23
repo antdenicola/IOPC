@@ -19,27 +19,24 @@ C-----------------------------------------------------------------------------C
       use varsh
       implicit none 
 
-      open(5)
-      open(6) 
-
-      write(5,*) '========================================'
-      write(5,*) '       * * * I. O. P. C. * * *          '
-      write(5,*) ' Input Program for Parallel Occam Code  '
-      write(5,*) ' ver. 1.7                               '
-      write(5,*) '========================================'
-      write(5,*)
-10    write(5,*) '> insert [1] for input program'
-      write(5,*) '> insert [2] for output program'
-      write(5,*) '> insert [3] for help'
-      read(6,*) mode
+      write(6,*) '========================================'
+      write(6,*) '       * * * I. O. P. C. * * *          '
+      write(6,*) ' Input Program for Parallel Occam Code  '
+      write(6,*) ' ver. 1.7                               '
+      write(6,*) '========================================'
+      write(6,*)
+10    write(6,*) '> insert [1] for input program'
+      write(6,*) '> insert [2] for output program'
+      write(6,*) '> insert [3] for help'
+      read(5,*) mode
 
       if (mode.eq.1)then
 
         call ofile
  
         if (istop.gt.0) then
-          write(5,*)' *** FATAL ERROR IN THE I/O FILE ***'
-          write(5,*)'    please check your input files   '
+          write(6,*)' *** FATAL ERROR IN THE I/O FILE ***'
+          write(6,*)'    please check your input files   '
           stop
         endif
 
@@ -60,30 +57,28 @@ C-----------------------------------------------------------------------------C
        endif
 
 
-       write(5,*)'---------------------------------------'
-       write(5,*)'> End Input Program'
+       write(6,*)'---------------------------------------'
+       write(6,*)'> End Input Program'
 
       elseif(mode.eq.2)then
 
         call wtrj
 
-        write(5,*)'> End Output Program'
+        write(6,*)'> End Output Program'
 
       elseif(mode.eq.3)then
-        write(5,*)
-        write(5,*)'+ Help -------------------------------------------+'
-        write(5,*)'| For the input you need of fort.10 (coord.)      |' 
-        write(5,*)'| For the output you need of fort.20i and fort.15 |'
-        write(5,*)'+-------------------------------------------------+'
-        write(5,*)
+        write(6,*)
+        write(6,*)'+ Help -------------------------------------------+'
+        write(6,*)'| For the input you need of fort.10 (coord.)      |' 
+        write(6,*)'| For the output you need of fort.20i and fort.15 |'
+        write(6,*)'+-------------------------------------------------+'
+        write(6,*)
         go to 10
       elseif(mode.gt.3)then
-        write(5,*)'Your choose is not valid, retry'
+        write(6,*)'Your choose is not valid, retry'
         go to 10
       endif
 
   
 
-      close(5) 
-      close(6) 
       end program
