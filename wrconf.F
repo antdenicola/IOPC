@@ -125,7 +125,7 @@ c      print*,mod(molB,numprocs)
                 Numb= nbonds(Atomtotal)                ! the number of bond 
           
            
-           do j = 1, 4 
+           do j = 1, 6 
 
             if (ibond(Atomtotal,j).ne.0) then
                ibond1(Atomtotal,j)=ibond(Atomtotal,j)-keep
@@ -137,7 +137,7 @@ c      print*,mod(molB,numprocs)
 
        write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $                 X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
-     $  (ibond1(Atomtotal,j),j=1,4)      ! default (ibond1(Atomtotal,j),j=1,4)
+     $  (ibond1(Atomtotal,j),j=1,6)      ! default (ibond1(Atomtotal,j),j=1,4)
 
           enddo
           enddo
@@ -177,7 +177,7 @@ c      print*,mod(molB,numprocs)
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
-           do j = 1, 4
+           do j = 1, 6
 
             if (ibond(Atomtotal,j).gt.0) then
              ibond1(Atomtotal,j)=ibond(Atomtotal,j)-keep
@@ -191,7 +191,7 @@ c      print*,mod(molB,numprocs)
 
        write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
-     $  (ibond1(Atomtotal,j),j=1,4)   !default  (ibond1(Atomtotal,j),j=1,4)
+     $  (ibond1(Atomtotal,j),j=1,6)   !default  (ibond1(Atomtotal,j),j=1,4)
 
        enddo
        enddo
@@ -233,7 +233,7 @@ c      print*,mod(molB,numprocs)
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
-           do j = 1, 4
+           do j = 1, 6
 
             if (ibond(Atomtotal,j).gt.0) then
              ibond1(Atomtotal,j)=ibond(Atomtotal,j)-keep
@@ -247,7 +247,7 @@ c      print*,mod(molB,numprocs)
 
        write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
-     $  (ibond1(Atomtotal,j),j=1,4)
+     $  (ibond1(Atomtotal,j),j=1,6)
 
        enddo
        enddo
@@ -290,7 +290,7 @@ c      print*,mod(molB,numprocs)
                 Numb=nbonds(Atomtotal)                 ! the number of bond 
 
 
-           do j = 1, 4
+           do j = 1, 6
 
             if (ibond(Atomtotal,j).gt.0) then
              ibond1(Atomtotal,j)=ibond(Atomtotal,j)-keep
@@ -305,13 +305,13 @@ c      print*,mod(molB,numprocs)
 
        write(20+i,200) Atom,Atomtotal,Lab,Lkind,Numb,
      $             X(Atomtotal),Y(Atomtotal),Z(Atomtotal),
-     $  (ibond1(Atomtotal,j),j=1,4)
+     $  (ibond1(Atomtotal,j),j=1,6)
 
 
 
        enddo
        enddo
-200   format(i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 3d15.6, 2x, 4i7)  ! default (i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 3d15.6, 2x, 4i7)
+200   format(i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 3d15.6, 2x, 6i7)  ! default (i8,2x,i8,2x,1a5,2x, i5, 2x, i5, 3d15.6, 2x, 4i7)
       enddo
 
       return

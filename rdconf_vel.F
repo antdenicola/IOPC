@@ -51,18 +51,18 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
      $  nbonds(l)
      $, x(l),y(l),z(l) ,
      $  vx(l), vy(l), vz(l),
-     $  (ibond(l,j),j=1,4)
+     $  (ibond(l,j),j=1,6)
 
 c           write (20,500) ll,clab(l), itype(l),
            write (20,*) ll,clab(l), itype(l),
      $  nbonds(l)
      $, x(l),y(l),z(l) ,
      $  vx(l),vy(l),vz(l),
-     $  (ibond(l,j),j=1,4)
+     $  (ibond(l,j),j=1,6)
 
  110  continue
  120  continue
- 500  format(i8,2x, a5, 2i3, 6d15.6, 4i8)
+ 500  format(i8,2x, a5, 2i3, 6d15.6, 6i8)
 
 
       close(10)

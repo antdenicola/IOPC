@@ -1,4 +1,3 @@
-#FCOMPFLAGS    =	-O0 -g -C -fpe0 -traceback 
 FCOMPFLAGS    =	 -O2  
 #FCOMPFLAGS    =	 -pg -tpp7 -O3  -align  -axN -tpp7 
 #FCOMPFLAGS    =	 -pg  -O2 -axN 
@@ -8,8 +7,8 @@ FFLAGS        =	$(FCOMPFLAGS)
 CFLAGS        = $(CCOMPFLAGS)
 LDFLAGS       =	$(FCOMPFLAGS)
 
-LD            =	ifort   
-FC            =	ifort   
+LD            =	gfortran    
+FC            =	gfortran    
 
 MAKEFILE      =	Makefile
 PROGRAM       =	iopc      
