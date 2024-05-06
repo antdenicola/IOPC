@@ -14,9 +14,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
        
         integer os, ios
         istop = 0
- 
-        open(5)
-        open(6)
+
         open(8)
         open(9) 
 
@@ -27,12 +25,12 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
            istop=1
         endif
 
-        write(5,*) ' * * * Writing Parallel Trajectory * * * '
-        write(5,*) '-----------------------------------------'
-        write(5,*)
-        write(5,*) '> Insert the number of CPU: '
+        write(6,*) ' * * * Writing Parallel Trajectory * * * '
+        write(6,*) '-----------------------------------------'
+        write(6,*)
+        write(6,*) '> Insert the number of CPU: '
 
-        read(6,*) numprocs
+        read(5,*) numprocs
          
         allocate(natmpia(numprocs))
 
@@ -50,17 +48,17 @@ ccccccc read the number of particles in every CPU from fort.15 cccccccc
         enddo 
 
 !ying  08/05/2011
-        write(5,*) '> Insert the initial steps: '
-        read (6,*) intsteps
-        write(5,*) '> Insert the time step dt:'
-        read (6,*) dt 
+        write(6,*) '> Insert the initial steps: '
+        read (5,*) intsteps
+        write(6,*) '> Insert the time step dt:'
+        read (5,*) dt 
 !ying  08/05/2011
         
-        write(5,*) '> Insert the number of configurations:   ' 
-        read(6,*) nconf
-        write(5,*) '> the end of insert                      '
+        write(6,*) '> Insert the number of configurations:   ' 
+        read(5,*) nconf
+        write(6,*) '> the end of insert                      '
 
-        write(5,*) '-----------------------------------------'
+        write(6,*) '-----------------------------------------'
 
  
         do i = 1, nconf     
@@ -101,6 +99,9 @@ ccccccc read the number of particles in every CPU from fort.15 cccccccc
          enddo 
         enddo 
        enddo
+
+       close(8)
+       close(9)
 
 100   format(a5, 3f18.10)
 110   format(a5, 6f18.10) 
