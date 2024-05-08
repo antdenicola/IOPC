@@ -8,6 +8,8 @@ echo " PARALLEL OCCAM MAKE RESTART FILES "
 echo 
 echo "==================================="
 echo "ver.: 1.1"
+echo "Manteined by: Antonio De Nicola - adenicola.chem@gmail.com"
+
 mkdir $PWD/restart
 echo "Restart directory created: $PWD/restart"
 
