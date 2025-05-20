@@ -1,3 +1,6 @@
+!# Code for calculation of chi matrix parameters for OCCAM       
+       
+       
        program chimat
        implicit none
        
